@@ -16,7 +16,11 @@ const Wrapper = styled(Box)(({ theme }) => ({
     alingItems: "center",
   },
   [theme.breakpoints.down("md")]: {
-    display: "block",
+    display: "flex",
+    flexDirection: "column",
+    gap: "20px",
+    color: "#ffff",
+    fontWeight: 600,
   },
 }));
 const Container = styled(Box)(({ theme }) => ({
@@ -38,6 +42,7 @@ const LoginButton = styled(Button)`
   height: 32px;
 `;
 
+
 const CustomButtons = () => {
   const [open, setOpen] = useState(false);
 
@@ -49,21 +54,23 @@ const CustomButtons = () => {
 
   return (
     <Wrapper>
-      {account ? (
-        <Profile account={account} setAccount={setAccount}></Profile>
-      ) : (
-        <LoginButton onClick={() => openDialog()} variant="contained">
-          Login
-        </LoginButton>
-      )}
-      <Typography style={{ marginTop: 3, width: 135 }}>Become a Seller</Typography>
-      <Typography style={{ marginTop: 3 }}>More</Typography>
+      {/* <Box> */}
+        {account ? (
+          <Profile account={account} setAccount={setAccount}></Profile>
+        ) : (
+          <LoginButton onClick={() => openDialog()} variant="contained">
+            Login
+          </LoginButton>
+        )}
+        <Typography style={{ marginTop: 3, width: 135 }}>Become a Seller</Typography>
+        <Typography style={{ marginTop: 3 }}>More</Typography>
 
-      <Container>
-        <ShoppingCartIcon />
-        <Typography>Cart</Typography>
-      </Container>
-      <LoginDialog open={open} setOpen={setOpen}></LoginDialog>
+        <Container>
+          <ShoppingCartIcon />
+          <Typography>Cart</Typography>
+        </Container>
+        <LoginDialog open={open} setOpen={setOpen}></LoginDialog>
+      {/* </Box> */}
     </Wrapper>
   );
 };
