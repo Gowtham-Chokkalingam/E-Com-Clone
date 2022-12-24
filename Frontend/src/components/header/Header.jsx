@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { AppBar, Toolbar, styled, Box, Typography } from "@mui/material";
+import { AppBar, Toolbar, styled, Box, Typography, IconButton, Drawer, List, ListItem } from "@mui/material";
 import Search from "./Search";
 import CustomButtons from "./CustomButtons";
 import { Link } from "react-router-dom";
-
+import MenuIcon from "@mui/icons-material/Menu";
 //> This StyledHeader providing the custom style to the AppBar Mui Component
 
 const StyledHeader = styled(AppBar)`
@@ -39,9 +39,37 @@ const PlusImage = styled("img")({
   marginLeft: 4,
 });
 
+const MenuButton = styled(IconButton)(({ theme }) => ({
+  display: "none",
+
+  [theme.breakpoints.down("md")]: {
+    display: "block",
+  },
+}));
 // Component
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const list = () => {
+    return (
+      <Box style={{width:200,}} onClick={handleClose}>
+        <List>
+          <ListItem>
+            <CustomButtons />
+          </ListItem>
+        </List>
+      </Box>
+    );
+  };
+
   const logoURL = "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/flipkart-plus_8d85f4.png";
 
   const subURL = "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/plus_aef861.png";
@@ -49,6 +77,13 @@ const Header = () => {
   return (
     <StyledHeader>
       <Toolbar style={{ minHeight: "55px" }}>
+        <MenuButton color="inherit" onClick={handleOpen}>
+          <MenuIcon />
+        </MenuButton>
+
+        <Drawer open={open} onClose={handleClose}>
+          {list()}
+        </Drawer>
         <Component to="/">
           <img src={logoURL} alt="flipKart-logo" style={{ width: 75 }}></img>
 
