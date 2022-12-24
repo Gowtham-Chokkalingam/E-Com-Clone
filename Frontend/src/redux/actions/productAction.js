@@ -1,4 +1,5 @@
 import axios from "axios";
+import { API_URL } from "../API/api";
 import {
   GET_PRODUCTS_FAILURE,
   GET_PRODUCTS_SUCCESS,
@@ -6,7 +7,7 @@ import {
   GET_PRODUCT_DETAILS_REQUEST,
   GET_PRODUCT_DETAILS_SUCCESS,
 } from "../constants/productsConstants";
-const URL = `http://localhost:8080`;
+const URL = API_URL
 
 export const getProductsAction = () => async (dispatch) => {
   try {

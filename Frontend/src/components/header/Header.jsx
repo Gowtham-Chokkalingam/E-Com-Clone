@@ -5,6 +5,7 @@ import Search from "./Search";
 import CustomButtons from "./CustomButtons";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 //> This StyledHeader providing the custom style to the AppBar Mui Component
 
 const StyledHeader = styled(AppBar)`
@@ -60,8 +61,9 @@ const Header = () => {
 
   const list = () => {
     return (
-      <Box style={{width:200,}} onClick={handleClose}>
+      <Box style={{ width: 200, background: "#2874f0", height: "1200px" }}>
         <List>
+          <CloseIcon style={{ width: "20px", marginLeft: "160px", color: "#ffff", cursor: "pointer" }} onClick={handleClose} />
           <ListItem>
             <CustomButtons />
           </ListItem>
