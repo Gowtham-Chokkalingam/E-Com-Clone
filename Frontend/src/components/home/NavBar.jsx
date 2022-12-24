@@ -8,7 +8,8 @@ const Component = styled(Box)(({ theme }) => ({
   display: "flex",
   margin: "55px 130px 0 130px",
   justifyContent: "space-around",
-  overflow:'overlay',
+  overflow: "overlay",
+  background: "#fff",
   [theme.breakpoints.down("lg")]: {
     margin: 0,
   },
@@ -27,14 +28,20 @@ const Text = styled(Typography)`
 
 const NavBar = () => {
   return (
-    <Component>
-      {navData.map((data, id) => (
-        <Containter key={id}>
-          <img src={data.url} alt={"nav"} style={{ width: 64 }}></img>
-          <Text>{data.text}</Text>
-        </Containter>
-      ))}
-    </Component>
+    <Box
+      style={{
+        background: "#fff",
+      }}
+    >
+      <Component>
+        {navData.map((data, id) => (
+          <Containter key={id}>
+            <img src={data.url} alt={"nav"} style={{ width: 64 }}></img>
+            <Text>{data.text}</Text>
+          </Containter>
+        ))}
+      </Component>
+    </Box>
   );
 };
 
