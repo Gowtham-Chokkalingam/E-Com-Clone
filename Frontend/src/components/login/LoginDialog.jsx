@@ -125,20 +125,21 @@ const LoginDialog = ({ open, setOpen }) => {
 
   const loginUser = async () => {
     let response = await authenticateLogin(login);
-    console.log("response:", response);
+    console.log("response:", response.data.data.firstname);
     if (!response) {
       showError(true);
     } else {
       showError(false);
       handleClose();
-      setAccount(login.username);
+      setAccount(response.data.data.firstname);
     }
   };
 
   const signupUser = async () => {
     let response = await authenticateSignup(signup);
+    console.log('signup:', response)
     if (!response) return;
-    handleClose();
+    // setOpen(false);
     setAccount(signup.username);
   };
 

@@ -3,6 +3,7 @@ import { API_URL } from "../redux/API/api";
 
 const URL = API_URL;
 export const authenticateSignup = async (data) => {
+  console.log('data:', data)
   try {
     return await axios.post(`${URL}/signup`, data);
   } catch (error) {

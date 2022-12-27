@@ -13,6 +13,7 @@ const Logout = styled(Typography)`
 `;
 
 const Profile = ({ account,setAccount }) => {
+  console.log('account:', account)
   const [open, setOpen] = useState(null);
 
   const handleClick = (e) => {
@@ -30,7 +31,7 @@ const Profile = ({ account,setAccount }) => {
   return (
     <>
       <Box onClick={handleClick}>
-        <Typography style={{ marginTop: 2,cursor:"pointer" }}>{account}</Typography>
+        <Typography style={{ marginTop: 2,marginRight:50,cursor:"pointer" }}>{account}</Typography>
       </Box>
 
       <Component id="basic-menu" anchorEl={open} open={Boolean(open)} onClose={handleClose}>

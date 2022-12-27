@@ -1,4 +1,4 @@
-import { Box, Button, Dialog, styled, TextField, Typography } from "@mui/material";
+import { Alert, Box, Button, Dialog, Snackbar, styled, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -15,7 +15,7 @@ const Error = styled(Typography)`
   font-weight: 600;
 `;
 
-const LoginButton = styled(Button)`
+const PlaceOrderBtn = styled(Button)`
   text-transform: none;
   background: #fb641b;
   color: #fff;
@@ -99,11 +99,28 @@ const loginInitialValues = {
 };
 const Paymet = ({ open, setOpen }) => {
   const [error, showError] = useState(false);
+  const [openA, setOpenA] = useState(false);
 
   const navigate = useNavigate();
 
   const handleClose = () => {
     setOpen(false);
+  };
+  const handleClickA = () => {
+    setOpenA(true);
+    setOpen(false);
+
+    setTimeout(() => {
+      navigate("/");
+    }, 2000);
+  };
+
+  const handleCloseA = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpenA(false);
   };
 
   const onInputChange = (e) => {
@@ -112,9 +129,6 @@ const Paymet = ({ open, setOpen }) => {
 
   const onValueChange = (e) => {
     // setLogin({ ...login, [e.target.name]: e.target.value });
-  };
-  const palceOrder = () => {
-    navigate("/");
   };
 
   return (
@@ -130,7 +144,13 @@ const Paymet = ({ open, setOpen }) => {
             <TextField variant="standard" label="Enter city" onChange={(e) => onValueChange(e)} name="city"></TextField>
             <Text>By Continuing, You agree to filpkart terms of use and privacy policy.</Text>
 
-            <LoginButton onClick={palceOrder}>Place Order</LoginButton>
+            <PlaceOrderBtn onClick={handleClickA}>Place Order</PlaceOrderBtn>
+
+            <Snackbar open={openA} autoHideDuration={6000} onClose={handleCloseA}>
+              <Alert onClose={handleCloseA} severity="success" sx={{ width: "100%" }}>
+                Your Order Has Placed Successfully
+              </Alert>
+            </Snackbar>
             <Typography style={{ textAlign: "center" }}>OR</Typography>
 
             <ReuestOTP>Cancel</ReuestOTP>
