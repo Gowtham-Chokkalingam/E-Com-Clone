@@ -1,8 +1,10 @@
-import { Box, Grid, Typography, styled, Button } from "@mui/material";
+import { Box, Grid, Typography, styled, Button, TextField, Stack, Modal } from "@mui/material";
 import React from "react";
+// import ModalDialog from '@mui/joy/ModalDialog';
 import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
 import EmptyCart from "./EmptyCart";
+import Paymet from "./Paymet";
 import TotalBalance from "./TotalBalance";
 
 const Container = styled(Grid)(({ theme }) => ({
@@ -44,7 +46,12 @@ const LeftGrid = styled(Grid)(({ theme }) => ({
 }));
 
 const Cart = () => {
+  const [open, setOpen] = React.useState(false);
   const { cartItems } = useSelector((state) => state.cart);
+
+  const openDialog = () => {
+    setOpen(true);
+  };
 
   return (
     <>
@@ -59,8 +66,9 @@ const Cart = () => {
             ))}
 
             <ButtonWarp>
-              <ButtonStyle>Place Order</ButtonStyle>
+              <ButtonStyle onClick={() => openDialog()}>Place Order</ButtonStyle>
             </ButtonWarp>
+            {/* <ModalForm></ModalForm> */}
           </LeftGrid>
 
           <Grid item lg={3} md={3} sm={12} xs={12}>
@@ -70,6 +78,7 @@ const Cart = () => {
       ) : (
         <EmptyCart />
       )}
+      <Paymet open={open} setOpen={setOpen}></Paymet>
     </>
   );
 };
