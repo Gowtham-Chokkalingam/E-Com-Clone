@@ -22,3 +22,6 @@
     - npm i mongoose
     - npm i cors
     - npm i dotenv
+    - npm i uuid
+    - npm i formidable
+    - npm i https
