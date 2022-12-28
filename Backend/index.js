@@ -35,7 +35,7 @@ Connection(USERNAME, PASSWORD);
 app.listen(PORT, () => {
   console.log(`Server Started at ${PORT}`);
 });
-DefaultData();
+// DefaultData();
 // export let paytmMerchantkey = process.env.PAYTM_MERCHANT_KEY;
 // export let paytmParams = {};
 
