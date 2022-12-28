@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { productsLIST } from "../../constants/data";
 import { getProductsAction } from "../../redux/actions/productAction";
 import Banner from "./Banner";
 import MidSection from "./MidSection";
@@ -18,17 +19,17 @@ const Component = styled(Box)`
 
 const Home = () => {
 
-const dispatch = useDispatch();
-const {products} = useSelector(state=>state.getProducts)
-console.log('products:', products)
+// const dispatch = useDispatch();
+// const {products} = useSelector(state=>state.getProducts)
 
 const [data, setData] = useState([]);
 
 useEffect(() => {
 
-  dispatch(getProductsAction())
+  // dispatch(getProductsAction())
+  setData(productsLIST)
 
-}, [dispatch])
+}, [])
 
 
 
