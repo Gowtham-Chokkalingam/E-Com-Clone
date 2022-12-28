@@ -22,7 +22,7 @@ const Home = () => {
 // const dispatch = useDispatch();
 // const {products} = useSelector(state=>state.getProducts)
 
-const [data, setData] = useState([]);
+const [products, setData] = useState([]);
 
 useEffect(() => {
 
