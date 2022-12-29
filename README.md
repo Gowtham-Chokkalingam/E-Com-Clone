@@ -1,8 +1,8 @@
  <h1> Flipkart Clone</h1>
-<h2>
+<h4>
 This is a solo project, a clone of the famous e-commerce website Flipkart. I have implemented various features in this project like User authentication using context API, searching products, and adding products into the cart with quantity updating buttons. I have used React to build the Front-end and MongoDB for the Back-end. & MUI used for styling.
 
-</h2>
+</h4>
 <br/>
 
 <h2><i>🎯 Using Languages & Tools 🧰</i></h2>
