@@ -44,9 +44,9 @@ const TotalBalance = ({ cartItems }) => {
     let price = 0;
     let discount = 0;
     cartItems.forEach((item) => {
-      console.log("iteefed:", item.quantity);
+      // console.log("iteefed:", item.quantity);
       price = price + item.price.mrp * item.quantity;
-      discount = discount + (item.price.mrp - item.price.cost);
+      discount = discount + (item.price.mrp - item.price.cost) * item.quantity;
     });
 
     setPrice(price);

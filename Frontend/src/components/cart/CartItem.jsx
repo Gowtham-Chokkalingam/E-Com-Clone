@@ -49,14 +49,14 @@ const CartItem = ({ product,handleQty }) => {
       // dispatch(addToCartAction(product.id,));
     }
 
-    console.log("dec:", qty);
+    // console.log("dec:", qty);
   };
 
 
   const handleInc = () => {
-    console.log("handleInc:", product.quantity);
+    // console.log("handleInc:", product.quantity);
     setQty(product.quantity + 1);
-    console.log("Inc:", qty);
+    // console.log("Inc:", qty);
     handleQty(product.id, qty);
 
 

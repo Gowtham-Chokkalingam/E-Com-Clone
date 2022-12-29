@@ -53,9 +53,7 @@ const Cart = () => {
   const [open, setOpen] = React.useState(false);
 
   const { cartItems } = useSelector((state) => state.cart);
-  const [quantity, setQuantity] = useState(1);
-  const [id, setId] = useState("");
-
+  
  
   const handleQty = (idx, q) => {
 
