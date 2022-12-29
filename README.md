@@ -25,9 +25,8 @@ This is a solo project, a clone of the famous e-commerce website Flipkart. I hav
 🎯## Project is live at below link 🔗
 <a href="https://filpkart-clone-clientgc.onrender.com/">
 
-<h2>
- Flipkart-Clone
-</h2>
+Flipkart-Clone
+
  </a>
 <br>
 
@@ -65,8 +64,7 @@ This is a solo project, a clone of the famous e-commerce website Flipkart. I hav
     2) cors
     3) dotenv
     4) mongoose
-    5) nodemon 
-
+    5) nodemon
 
 ## Landing Page
 
@@ -84,9 +82,6 @@ This is a solo project, a clone of the famous e-commerce website Flipkart. I hav
 
  <img src="/Frontend/public/assets/FlipkartLogin.png" alt="login Page" />
 
-
-
-
 ## Setting Up Project in local
 
 ### Frontend
@@ -98,6 +93,7 @@ This is a solo project, a clone of the famous e-commerce website Flipkart. I hav
     3) run command npm install or npm i --legacy-peer-deps it will install all the required Dependencies with no errors.
 
 #### 2) Starting frontend on localhost
+
 (make sure you are confirming url of server)
 
     npm start /*or*/ npm run start
@@ -113,7 +109,6 @@ This is a solo project, a clone of the famous e-commerce website Flipkart. I hav
     1) navigate to Backend directory
     2) use node version 16 or 18.12.1 is recommended
     3) run command npm install or npm i --legacy-peer-deps
-
 
 #### 1) Starting Server in deployment
 
