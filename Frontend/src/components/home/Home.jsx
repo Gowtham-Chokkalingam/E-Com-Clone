@@ -20,7 +20,7 @@ const Home = () => {
 
 const dispatch = useDispatch();
 const {products} = useSelector(state=>state.getProducts)
-console.log('products:', products)
+// console.log('products:', products)
 
 const [data, setData] = useState([]);
 

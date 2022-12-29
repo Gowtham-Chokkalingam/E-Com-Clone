@@ -1,7 +1,8 @@
 import { Box, Grid, Typography, styled, Button, TextField, Stack, Modal } from "@mui/material";
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 // import ModalDialog from '@mui/joy/ModalDialog';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCartAction } from "../../redux/actions/cartAction";
 import CartItem from "./CartItem";
 import EmptyCart from "./EmptyCart";
 import Paymet from "./Paymet";
@@ -32,7 +33,8 @@ const ButtonStyle = styled(Button)`
   margin-left: auto;
 
   background: #fb641b;
-  color: #fff;
+  color: black;
+  font-weight:600;
   width: 250px;
   height: 51px;
   border-radius: 2px;
@@ -46,8 +48,18 @@ const LeftGrid = styled(Grid)(({ theme }) => ({
 }));
 
 const Cart = () => {
+  const dispatch = useDispatch();
+
   const [open, setOpen] = React.useState(false);
+
   const { cartItems } = useSelector((state) => state.cart);
+  const [quantity, setQuantity] = useState(1);
+  const [id, setId] = useState("");
+
+ 
+  const handleQty = (idx, q) => {
+
+  };
 
   const openDialog = () => {
     setOpen(true);
@@ -61,8 +73,8 @@ const Cart = () => {
             <Header>
               <Typography>My Cart({cartItems.length})</Typography>
             </Header>
-            {cartItems.map((item) => (
-              <CartItem product={item} />
+            {cartItems.map((item, i) => (
+              <CartItem key={i} product={item} handleQty={handleQty} />
             ))}
 
             <ButtonWarp>

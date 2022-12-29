@@ -108,7 +108,7 @@ const Paymet = ({ open, setOpen }) => {
   };
   const handleClickA = () => {
     setOpenA(true);
-    setOpen(false);
+    // setOpen(false);
 
     setTimeout(() => {
       navigate("/");
