@@ -22,12 +22,8 @@ This is a solo project, a clone of the famous e-commerce website Flipkart. I hav
  </p>
 <br>
 
-🎯## Project is live at below link 🔗
-<a href="https://filpkart-clone-clientgc.onrender.com/">
-
-Flipkart-Clone
-
- </a>
+🎯## Project is live at 🔗
+**[FlipKart](https://filpkart-clone-clientgc.onrender.com/)** 
 <br>
 
 🎯 Features
