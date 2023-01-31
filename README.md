@@ -1,6 +1,6 @@
  <h1> Flipkart Clone</h1>
 <h4>
-This is compelte MERN Stack project, which is a clone of Flipkart, an e-commerce platform. For the front-end, I utilized React JS and Material UI to design an attractive and user-friendly interface. I also employed Redux for front-end state management to ensure a smooth user experience.
+This is complete MERN Stack project, which is a clone of Flipkart, an e-commerce platform. For the front-end, I utilized React JS and Material UI to design an attractive and user-friendly interface. I also employed Redux for front-end state management to ensure a smooth user experience.
 
 In the backend, I utilized Node.js and Express.js to handle all backend operations and create APIs for front-end requests. To store the data, I used MongoDB and the Mongoose library. For user authentication and authorization, I implemented JSON Web Tokens (JWT) and secured user passwords using Bcryptjs.
 
