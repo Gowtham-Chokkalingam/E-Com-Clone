@@ -18,7 +18,6 @@ const app = express();
 dotenv.config();
 
 app.use(cors());
-app.use(bodyParser.json({ extended: true }));
 
 //> this will remove the extra space and some randomnumber in the url which is coming from clinet side
 app.use(bodyParser.urlencoded({ extended: true }));

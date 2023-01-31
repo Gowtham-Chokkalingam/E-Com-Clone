@@ -1,6 +1,10 @@
  <h1> Flipkart Clone</h1>
 <h4>
-This is a solo project, a clone of the famous e-commerce website Flipkart. I have implemented various features in this project like User authentication using context API, searching products, and adding products into the cart with quantity updating buttons. I have used React to build the Front-end and MongoDB for the Back-end. & MUI used for styling.
+This is compelte MERN Stack project, which is a clone of Flipkart, an e-commerce platform. For the front-end, I utilized React JS and Material UI to design an attractive and user-friendly interface. I also employed Redux for front-end state management to ensure a smooth user experience.
+
+In the backend, I utilized Node.js and Express.js to handle all backend operations and create APIs for front-end requests. To store the data, I used MongoDB and the Mongoose library. For user authentication and authorization, I implemented JSON Web Tokens (JWT) and secured user passwords using Bcryptjs.
+
+Overall, this project allowed me to showcase my proficiency in various technologies and tools, including React, Material UI, Redux, Node.js, Express.js, MongoDB, Mongoose, JWT, and Bcryptjs.
 
 </h4>
 <br/>
