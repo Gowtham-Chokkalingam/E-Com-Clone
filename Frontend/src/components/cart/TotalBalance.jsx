@@ -43,9 +43,10 @@ const TotalBalance = ({ cartItems }) => {
   const totalAmount = () => {
     let price = 0;
     let discount = 0;
-    cartItems.map((item) => {
-      price = price + item.price.mrp;
-      discount = discount + (item.price.mrp - item.price.cost);
+    cartItems.forEach((item) => {
+      // console.log("iteefed:", item.quantity);
+      price = price + item.price.mrp * item.quantity;
+      discount = discount + (item.price.mrp - item.price.cost) * item.quantity;
     });
 
     setPrice(price);

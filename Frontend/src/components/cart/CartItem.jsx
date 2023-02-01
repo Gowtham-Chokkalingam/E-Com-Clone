@@ -1,7 +1,7 @@
 import { Box, Button, styled, Typography } from "@mui/material";
-import React from "react";
+import React, { useState ,useCallback, useEffect} from "react";
 import { useDispatch } from "react-redux";
-import { removeFromCartAction } from "../../redux/actions/cartAction";
+import { addToCartAction, removeFromCartAction } from "../../redux/actions/cartAction";
 import { addEllipsis } from "../../utils/common-utils";
 import GroupButton from "./GroupButton";
 
@@ -28,10 +28,40 @@ const RemoveBtn = styled(Button)`
   font-size: 16px;
   font-weight: 600;
   color: #000;
+  background:#4B56D2;
 `;
 
-const CartItem = ({ product }) => {
+const CartItem = ({ product,handleQty }) => {
+  
   const dispatch = useDispatch();
+  const [qty, setQty] = useState(1);
+  useEffect(() => {
+    dispatch(addToCartAction(product.id, qty));
+    
+  }, [qty])
+  
+
+  const handleDec = () => {
+    if (product.quantity > 1) {
+      setQty(product.quantity - 1);
+      handleQty(product.id, qty);
+      // setQty(1);
+      // dispatch(addToCartAction(product.id,));
+    }
+
+    // console.log("dec:", qty);
+  };
+
+
+  const handleInc = () => {
+    // console.log("handleInc:", product.quantity);
+    setQty(product.quantity + 1);
+    // console.log("Inc:", qty);
+    handleQty(product.id, qty);
+
+
+    // setQty(1);
+  };
 
   const removeItemFromCart = (id) => {
     dispatch(removeFromCartAction(id));
@@ -41,7 +71,7 @@ const CartItem = ({ product }) => {
     <Component>
       <LeftComponent>
         <img style={{ width: 110, height: 110 }} src={product.url} alt="prod"></img>
-        <GroupButton></GroupButton>
+        <GroupButton dec={handleDec} inc={handleInc} qty={product.quantity}></GroupButton>
       </LeftComponent>
       <Box style={{ margin: 20 }}>
         <Typography>{addEllipsis(product.title.longTitle)}</Typography>

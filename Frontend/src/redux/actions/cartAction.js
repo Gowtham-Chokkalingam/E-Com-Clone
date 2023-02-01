@@ -5,6 +5,7 @@ import { ADD_TO_CART, ADD_TO_CART_ERROR, REMOVE_FROM_CART } from "../constants/c
 const URL = API_URL;
 
 export const addToCartAction = (id, quantity) => async (dispatch) => {
+  // console.log('id, quantity:', id, quantity)
   try {
     const { data } = await axios.get(`${URL}/product/${id}`);
 
