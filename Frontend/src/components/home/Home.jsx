@@ -50,10 +50,6 @@ useEffect(() => {
         <Slide products={products} title={'Top Deals On Accessories'} timer={false}></Slide>
 
 
-
-
-
-
       </Component>
     </>
   );
